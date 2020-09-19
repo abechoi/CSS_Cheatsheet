@@ -1,21 +1,26 @@
-body{
+body {
   font-family: arial;
   background: #f8f9fb;
 }
-html, body, ul, ol, li, form, fieldset, legend{
+
+html, body, ul, ol, li, form, fieldset, legend {
   margin: 0;
   padding: 0;
 }
-h1, h2, h3, h4, h5, h6, p{
+
+h1, h2, h3, h4, h5, h6, p {
   margin-top: 0;
 }
-fieldset, img{
+
+fieldset, img {
   border: 0;
 }
-li{
-  list-styles: none;
+
+li {
+  list-style: none;
 }
-.wrapper{
+
+.wrapper {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
