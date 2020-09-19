@@ -1,32 +1,33 @@
 # SASS
+https://sass-lang.com/documentation/modules
 
-## Install SASS:
+## Install SASS
 ```
 npm install -g sass
 ```
 
-## Compile SASS -> CSS:
+## Compile SASS -> CSS
 ```
 sass scss/styles.scss css/styles.css
 ```
 
-## Compile SCSS automatically:
+## Compile SCSS automatically
 ```
 sass --watch scss/styles.scss:css/styles.css --style expanded --no-source-map
 ```
 
-## Compile multiple SCSS automatically:
+## Compile multiple SCSS automatically
 ```
 sass --watch scss/styles.scss:css/styles.css scss/reset.scss:css/reset.css --style expanded --no-source-map
 ```
 
-## Variables:
+## Variables
 ```
 $myColor: #ddd;
 $sectionHeading: 24px;
 ```
 
-## Nested Styles:
+## Nested Styles
 ```
 #main-nav{
   background: $deepBlue;
@@ -40,7 +41,7 @@ $sectionHeading: 24px;
 }
 ```
 
-## Mixins:
+## Mixins
 ```
 @mixin banner{
   width: 100%;
@@ -62,14 +63,14 @@ $sectionHeading: 24px;
 }
 ```
 
-## Import Files:
+## Import Files
 ```
 @import "reset";
 @import "variables";
 @import "mixins"; 
 ```
 
-## Psuedo Classes:
+## Psuedo Classes
 ```
 a{
   &:hover{
@@ -82,5 +83,43 @@ a{
 ```
 li{
   width: (100% / 3);
+}
+```
+
+## Color Functions
+```
+&:hover{
+  background: lighten($deepBlue, 6);
+  color:complement($deepBlue);
+}
+```
+
+## Contents
+```
+@mixin mQ($arg){
+  @media screen and (max-width: $arg){
+    @content;
+  }
+}
+li{
+  @include mQ(600px){
+    width: 100%;
+  };
+}
+```
+
+## If Statements
+```
+@mixin mQ($arg...){
+  @if length($arg) == 1{
+    @media screen and (max-width: nth($arg, 1)){
+      @content;
+    }
+  }
+  @if length($arg) == 2{
+    @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)){
+      @content;
+    }
+  }
 }
 ```
